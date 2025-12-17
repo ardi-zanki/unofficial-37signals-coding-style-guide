@@ -4,7 +4,7 @@ Transferable Rails patterns and development philosophy extracted from analyzing 
 
 ## What This Is
 
-Fizzy is a kanban-style project management app built by 37signals. By analyzing their PRs, we extracted reusable patterns applicable to any Rails application—development philosophy, architectural decisions, and implementation techniques.
+Fizzy is a kanban-style project management app built by 37signals. We analyzed both the final source code AND the process that led to it—pull requests, git commits, code review discussions, and iterations. This dual approach captures not just *what* 37signals builds, but *how* they build it: their decision-making, trade-offs, and evolution of ideas.
 
 ## What This Is Not
 
