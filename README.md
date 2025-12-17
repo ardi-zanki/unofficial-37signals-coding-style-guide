@@ -10,6 +10,12 @@ Fizzy is a kanban-style project management app built by 37signals. By analyzing 
 
 These are not Fizzy-specific implementation details. We deliberately skipped business logic unique to Fizzy and focused only on patterns you can apply to your own projects.
 
+## Important Caveats
+
+**LLM-Generated Content**: This guide was largely produced by an LLM (Claude) analyzing PR descriptions and code snippets. Given the volume of text and code involved, there may be hallucinations or inaccuracies. Take everything with a grain of salt and verify against actual implementations. That said, I've found it useful as a reference in my own projects.
+
+**Code License**: The code examples extracted from Fizzy are licensed under the [O'Saasy License](https://osaasy.dev). Please review that license before using code snippets in your projects.
+
 ---
 
 ## Table of Contents
