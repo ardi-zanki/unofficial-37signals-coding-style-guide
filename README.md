@@ -20,19 +20,24 @@ These are not Fizzy-specific implementation details. We deliberately skipped bus
 
 ## Table of Contents
 
-### Philosophy & Process
+### Philosophy & Architecture
 - [Development Philosophy](development-philosophy.md) - Ship/Validate/Refine, vanilla Rails, DHH's review patterns
+- [What They Avoid](what-they-avoid.md) - Gems and patterns 37signals deliberately doesn't use
+- [Routing](routing.md) - Everything is CRUD, resource-based patterns
 - [Jason Fried's Patterns](jason-fried-patterns.md) - Product-oriented development, perceived performance
 - [Jorge Manrubia's Patterns](jorge-manrubia-patterns.md) - Code review style, architecture decisions
 
 ### Frontend
 - [Hotwire Patterns](hotwire-patterns.md) - Turbo Frames/Streams, morphing, Stimulus, drag & drop
+- [CSS Architecture](css-architecture.md) - Native CSS, cascade layers, OKLCH colors
 - [Accessibility](accessibility.md) - ARIA patterns, keyboard navigation, screen readers
 - [Mobile](mobile.md) - Responsive CSS, safe area insets, touch optimization
 - [Filtering](filtering.md) - Filter objects, URL-based state, Stimulus controllers
 
 ### Backend
+- [Authentication](authentication.md) - Passwordless magic links without Devise
 - [Multi-Tenancy](multi-tenancy.md) - Path-based tenancy, middleware, ActiveJob extensions
+- [Database Patterns](database-patterns.md) - UUIDs, state as records, database-backed everything
 - [Background Jobs](background-jobs.md) - Solid Queue patterns, tenant preservation, continuable jobs
 - [Caching Patterns](caching-patterns.md) - HTTP caching, fragment caching, invalidation
 - [Performance Patterns](performance-patterns.md) - Preloading, N+1 prevention, memoization
@@ -46,8 +51,9 @@ These are not Fizzy-specific implementation details. We deliberately skipped bus
 - [Email](email.md) - Multi-tenant mailers, timezone handling
 - [AI/LLM Integration](ai-llm.md) - Command pattern, cost tracking, LLM tool patterns
 
-### Infrastructure
+### Infrastructure & Testing
 - [Security Checklist](security-checklist.md) - XSS, CSRF, SSRF, rate limiting, authorization
+- [Testing](testing.md) - Minitest, fixtures over factories, integration tests
 - [Observability](observability.md) - Structured logging, Yabeda metrics
 - [Configuration](configuration.md) - Environment config, Kamal deployment
 - [Active Storage](active-storage.md) - Attachment patterns, variants
