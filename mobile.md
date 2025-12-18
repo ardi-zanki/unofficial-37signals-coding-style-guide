@@ -1,14 +1,6 @@
-# Mobile Development Guide for Rails Apps
+# Mobile
 
-This guide documents transferable lessons and patterns for building responsive, mobile-first Rails applications, extracted from Fizzy's mobile development work.
-
-## Table of Contents
-
-1. [Responsive Design Patterns](#responsive-design-patterns)
-2. [Mobile-First CSS Techniques](#mobile-first-css-techniques)
-3. [Touch-Optimized Interactions](#touch-optimized-interactions)
-4. [Progressive Enhancement](#progressive-enhancement)
-5. [Safe Area Insets & Native Integration](#safe-area-insets--native-integration)
+> Responsive CSS, safe area insets, and touch optimization.
 
 ---
 

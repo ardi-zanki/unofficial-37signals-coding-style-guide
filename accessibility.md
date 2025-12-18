@@ -1,6 +1,8 @@
-# Rails Accessibility Guide
+# Accessibility
 
-Lessons extracted from Fizzy accessibility improvements (PRs [#302](https://github.com/basecamp/fizzy/pull/302), [#537](https://github.com/basecamp/fizzy/pull/537), [#581](https://github.com/basecamp/fizzy/pull/581), [#695](https://github.com/basecamp/fizzy/pull/695), [#834](https://github.com/basecamp/fizzy/pull/834), [#994](https://github.com/basecamp/fizzy/pull/994)).
+> ARIA patterns, keyboard navigation, and screen reader support.
+
+---
 
 ## ARIA Patterns
 

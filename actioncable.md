@@ -1,6 +1,8 @@
-# ActionCable Patterns and Best Practices
+# ActionCable
 
-Transferable lessons from Fizzy's ActionCable implementation for any Rails application.
+> Multi-tenant WebSockets, broadcast scoping, and Solid Cable.
+
+---
 
 ## Connection Management
 

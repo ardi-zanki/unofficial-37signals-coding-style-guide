@@ -1,21 +1,10 @@
-# Rails Webhooks Implementation Guide
+# Webhooks
 
-Transferable lessons from Fizzy's webhook system for any Rails application.
-
-## Table of Contents
-
-1. [Security: SSRF Protection](#security-ssrf-protection)
-2. [Delivery Pattern: Asynchronous with State Machine](#delivery-pattern-asynchronous-with-state-machine)
-3. [Retry Strategy: Delinquency Tracking](#retry-strategy-delinquency-tracking)
-4. [Signature Verification: HMAC-SHA256](#signature-verification-hmac-sha256)
-5. [Background Job Integration](#background-job-integration)
-6. [Testing Webhooks](#testing-webhooks)
-7. [Payload Formatting: Multi-Format Support](#payload-formatting-multi-format-support)
-8. [Data Retention: Automatic Cleanup](#data-retention-automatic-cleanup)
+> SSRF protection, delinquency tracking, and state machines.
 
 ---
 
-## Security: SSRF Protection
+## SSRF Protection
 
 **PR:** #1196
 

@@ -1,8 +1,10 @@
-# Transferable Workflow Patterns from Fizzy
+# Workflows
 
-This document extracts general-purpose workflow patterns from Fizzy's implementation that can be applied to any Rails application requiring workflow management, state machines, or process orchestration.
+> Event-driven state and undoable commands.
 
-## 1. Event-Driven State Tracking
+---
+
+## Event-Driven State Tracking
 
 **Pattern**: Store state transitions as events with structured metadata instead of just updating state fields.
 

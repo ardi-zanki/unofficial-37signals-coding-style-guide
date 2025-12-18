@@ -1,8 +1,10 @@
-# Email Patterns in Rails
+# Email
 
-Transferable lessons from Fizzy's email implementation applicable to any Rails application.
+> Multi-tenant mailers and timezone handling.
 
-## 1. Multi-Tenant URL Helpers in Mailers
+---
+
+## Multi-Tenant URL Helpers in Mailers
 
 **Pattern**: Override `default_url_options` in ApplicationMailer to inject tenant context into all email URLs.
 

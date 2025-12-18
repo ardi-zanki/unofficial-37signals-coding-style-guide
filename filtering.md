@@ -1,8 +1,10 @@
-# Rails Filtering Patterns: Insights from Fizzy
+# Filtering
 
-This guide extracts transferable filtering patterns from Fizzy PRs [#115](https://github.com/basecamp/fizzy/pull/115), [#116](https://github.com/basecamp/fizzy/pull/116), [#138](https://github.com/basecamp/fizzy/pull/138), [#567](https://github.com/basecamp/fizzy/pull/567), and [#624](https://github.com/basecamp/fizzy/pull/624). These patterns are applicable to any Rails application implementing filtering functionality.
+> Filter objects and URL-based state management.
 
-## 1. Filter Object Pattern: Evolution from Controller to PORO
+---
+
+## Filter Object Pattern
 
 **Pattern**: Extract filtering logic from controllers into dedicated Plain Old Ruby Objects (POROs).
 

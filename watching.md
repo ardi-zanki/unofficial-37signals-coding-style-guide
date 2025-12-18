@@ -1,20 +1,10 @@
-# Transferable Patterns from Fizzy Watching/Subscription System
+# Watching
 
-This guide extracts reusable patterns from Fizzy's evolution of watching/subscription features ([#310](https://github.com/basecamp/fizzy/pull/310), [#1088](https://github.com/basecamp/fizzy/pull/1088), [#1099](https://github.com/basecamp/fizzy/pull/1099), [#1228](https://github.com/basecamp/fizzy/pull/1228), [#1231](https://github.com/basecamp/fizzy/pull/1231), [#1239](https://github.com/basecamp/fizzy/pull/1239), [#1519](https://github.com/basecamp/fizzy/pull/1519)), focusing on lessons applicable to any Rails app.
-
-## Table of Contents
-
-1. [Embedding Subscription State in Access Records](#embedding-subscription-state-in-access-records)
-2. [Simplifying Involvement Levels](#simplifying-involvement-levels)
-3. [Separating Resource-Level and Collection-Level Watching](#separating-resource-level-and-collection-level-watching)
-4. [Toggle UI Patterns with Turbo](#toggle-ui-patterns-with-turbo)
-5. [Data Cleanup on Access Removal](#data-cleanup-on-access-removal)
-6. [Cache Invalidation Strategies](#cache-invalidation-strategies)
-7. [Testing Subscription Logic](#testing-subscription-logic)
+> Subscription patterns and toggle UI.
 
 ---
 
-## 1. Embedding Subscription State in Access Records
+## Embedding Subscription State in Access Records
 
 **Pattern**: Instead of a separate polymorphic `subscriptions` table, embed notification preferences directly into the join table that manages access.
 

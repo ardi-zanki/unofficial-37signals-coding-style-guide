@@ -1,10 +1,10 @@
-# Rails Notification System Patterns: Lessons from Fizzy
+# Notifications
 
-This document extracts transferable notification system patterns from Fizzy's implementation. Focus is on architecture, batching strategies, user preferences, and background job patterns that can be applied to any Rails app.
+> Time window bundling, user preferences, and real-time updates.
 
 ---
 
-## 1. Read State Management with Timestamps
+## Read State Management with Timestamps
 
 **Pattern**: Use `read_at` timestamps instead of boolean `read` flags.
 

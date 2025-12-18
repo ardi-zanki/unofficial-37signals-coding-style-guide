@@ -1,8 +1,10 @@
-# Action Text: Lessons from Fizzy
+# Action Text
 
-A collection of transferable patterns and insights from Fizzy's Action Text implementation, applicable to any Rails application.
+> Rich text editing with sanitizer config and remote images.
 
-## 1. Sanitizer Configuration in Production
+---
+
+## Sanitizer Configuration in Production
 
 **PR**: [[#873](https://github.com/basecamp/fizzy/pull/873)](https://github.com/basecamp/fizzy/pull/873)
 
