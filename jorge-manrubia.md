@@ -1,5 +1,7 @@
 # Jorge Manrubia Code Review Patterns
 
+> ⚠️ **AI-Generated Content**: This file was compiled using AI assistance by analyzing PR reviews. Some patterns may be misattributed or misinterpreted. Always verify against the original PR links.
+
 > Extracted from PRs [#339](https://github.com/basecamp/fizzy/pull/339), [#483](https://github.com/basecamp/fizzy/pull/483), [#929](https://github.com/basecamp/fizzy/pull/929), [#1052](https://github.com/basecamp/fizzy/pull/1052)
 > Focus: Architecture, Rails patterns, testing, and performance
 

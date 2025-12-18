@@ -1,5 +1,7 @@
 # Jason Zimdars' Design & Product Patterns
 
+> ⚠️ **AI-Generated Content**: This file was compiled using AI assistance by analyzing PR reviews. Some patterns may be misattributed or misinterpreted. Always verify against the original PR links.
+
 > Extracted from PRs by [@jzimdars](https://github.com/jzimdars) (Lead Designer at 37signals) in [basecamp/fizzy](https://github.com/basecamp/fizzy)
 > Focus: UX-first development, prototype shipping, visual coherence, CSS patterns
 
