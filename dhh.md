@@ -1,6 +1,6 @@
 # DHH's Code Review Patterns
 
-> ⚠️ **AI-Generated Content**: This file was compiled using AI assistance by analyzing PR reviews. Some patterns may be misattributed or misinterpreted. Always verify against the original PR links.
+> 📝 **A note on attribution**: We created these personal pattern files to give credit to individual developers whose review style we found instructive. This content was compiled with AI assistance by analyzing PR comments, so take it with a grain of salt—some patterns may be misattributed or misinterpreted. When in doubt, check the linked PRs.
 
 > Extracted from PR reviews in [basecamp/fizzy](https://github.com/basecamp/fizzy)
 > Focus: Simplicity, directness, Rails conventions, and fighting abstraction
