@@ -68,7 +68,7 @@ These are not Fizzy-specific implementation details. We deliberately skipped bus
 - [What They Avoid](what-they-avoid.md) - Gems and patterns 37signals deliberately doesn't use
 
 ### Contributors
-- [Jason Fried](jason-fried.md) - Product-oriented development, perceived performance
+- [Jason Zimdars](jason-zimdars.md) - Product-oriented development, perceived performance
 - [Jorge Manrubia](jorge-manrubia.md) - Code review style, architecture decisions
 
 ---
