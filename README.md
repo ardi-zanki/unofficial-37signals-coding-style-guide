@@ -46,6 +46,18 @@ Then ask for a review with `/dhh`, or just write Rails code — the core skill a
 cp -R 37signals-skills/skills/* your-app/.cursor/skills/
 ```
 
+### Codex
+
+Copy the skills into your global Codex skills directory:
+
+```bash
+git clone https://github.com/marckohlbrugge/37signals-skills.git
+mkdir -p ~/.agents/skills
+cp -R 37signals-skills/skills/* ~/.agents/skills/
+```
+
+Codex can invoke skills explicitly with `$skill-name` (for example, `$dhh`) or automatically when a task matches the skill description. Restart Codex if the new skills do not appear.
+
 ### Other agents
 
 Each skill is a plain `SKILL.md` with YAML frontmatter ([Agent Skills format](https://agentskills.io)). Most SKILL.md-compatible tools can load them as-is, or paste the contents into your system prompt / rules file.
@@ -56,6 +68,13 @@ Clone the repo somewhere permanent and symlink instead of copying:
 
 ```bash
 ln -s "$(pwd)/37signals-skills/skills/"* ~/.claude/skills/
+```
+
+For Codex:
+
+```bash
+mkdir -p ~/.agents/skills
+ln -s "$(pwd)/37signals-skills/skills/"* ~/.agents/skills/
 ```
 
 Then `git pull` to get updates.
