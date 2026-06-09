@@ -1,77 +1,82 @@
-# Unofficial 37signals Coding Style Guide
+# 37signals Skills
 
-Transferable Rails patterns and development philosophy extracted from analyzing 265 pull requests in 37signals' Fizzy codebase.
+Agent skills and a reference guide that teach AI coding assistants to write Rails the 37signals way — extracted from Fizzy, Campfire, and 100+ of DHH's code reviews.
 
-## What This Is
+Drop the skills into Claude Code or Cursor and your agent starts applying the same patterns 37signals uses: rich domain models over service objects, state as records, CRUD-everything routing, fixtures over factories, vanilla Rails over gems.
 
-Fizzy is a kanban-style project management app built by 37signals. We analyzed both the final source code AND the process that led to it—pull requests, git commits, code review discussions, and iterations. This dual approach captures not just *what* 37signals builds, but *how* they build it: their decision-making, trade-offs, and evolution of ideas.
+## The Skills
 
-## What This Is Not
+| Skill | What it covers | Invocation |
+|---|---|---|
+| [`rails-best-practices-core`](skills/rails-best-practices-core/SKILL.md) | Architecture, naming, modeling patterns, REST routing, authorization — the baseline for all Rails work | Automatic |
+| [`rails-hotwire-realtime`](skills/rails-hotwire-realtime/SKILL.md) | Turbo Streams/Frames, morphing, Stimulus, ActionCable, presence, optimistic UI, web push | On demand |
+| [`rails-jobs`](skills/rails-jobs/SKILL.md) | Active Job design, `_later`/`_now` conventions, Solid Queue, recurring tasks, retry policy | On demand |
+| [`rails-migrations`](skills/rails-migrations/SKILL.md) | Safe schema changes, staged rollouts, script backfills, multi-DB/multi-adapter setups | On demand |
+| [`rails-security-multitenancy`](skills/rails-security-multitenancy/SKILL.md) | Path-based tenancy, Identity→Session→User auth, scoped lookups, SSRF, CSRF, rate limiting | On demand |
+| [`rails-testing`](skills/rails-testing/SKILL.md) | Minitest + fixtures, coverage budget, Turbo/broadcast assertions, multi-tenant test wiring | On demand |
+| [`rails-webhooks`](skills/rails-webhooks/SKILL.md) | Outbox delivery, failure classification, delinquency circuit breakers, payload signing | On demand |
+| [`dhh`](skills/dhh/SKILL.md) | Review code like DHH would — direct, opinionated, allergic to over-engineering | `/dhh` |
 
-These are not Fizzy-specific implementation details. We deliberately skipped business logic unique to Fizzy and focused only on patterns you can apply to your own projects.
+"On demand" skills are marked `disable-model-invocation: true` so they don't bloat every request — invoke them explicitly (e.g. as a slash command) or let the core skill point to them.
 
-## Important Caveats
+## Installation
 
-**LLM-Generated Content**: This guide was largely produced by an LLM (Claude) analyzing PR descriptions and code snippets. Given the volume of text and code involved, there may be hallucinations or inaccuracies. Take everything with a grain of salt and verify against actual implementations. That said, I've found it useful as a reference in my own projects.
+### Claude Code
 
-**Code License**: The code examples extracted from Fizzy are licensed under the [O'Saasy License](https://osaasy.dev). Please review that license before using code snippets in your projects.
+Copy the skills you want into your personal or project skills directory:
 
----
+```bash
+git clone https://github.com/marckohlbrugge/37signals-skills.git
 
-## Table of Contents
+# Personal (all projects)
+cp -R 37signals-skills/skills/* ~/.claude/skills/
 
-### Core Rails
-- [Routing](routing.md) - Everything is CRUD, resource-based patterns, resolve helpers
-- [Controllers](controllers.md) - Thin controllers, rich models, composable concerns catalog
-- [Models](models.md) - Concerns, state as records, Current context, PORO patterns
-- [Views](views.md) - Turbo Streams, partials, fragment caching, view helpers
+# Or per-project
+cp -R 37signals-skills/skills/* your-app/.claude/skills/
+```
 
-### Frontend
-- [Stimulus](stimulus.md) - Reusable controller catalog with copy-paste code
-- [CSS](css.md) - Native CSS, cascade layers, OKLCH colors, modern features
-- [Hotwire](hotwire.md) - Turbo Frames/Streams, morphing, drag & drop
-- [Accessibility](accessibility.md) - ARIA patterns, keyboard navigation, screen readers
-- [Mobile](mobile.md) - Responsive CSS, safe area insets, touch optimization
+Then ask for a review with `/dhh`, or just write Rails code — the core skill activates automatically.
 
-### Backend
-- [Authentication](authentication.md) - Passwordless magic links without Devise
-- [Multi-Tenancy](multi-tenancy.md) - Path-based tenancy, middleware, ActiveJob extensions
-- [Database](database.md) - UUIDs, state as records, database-backed everything
-- [Background Jobs](background-jobs.md) - Solid Queue patterns, tenant preservation, continuable jobs
-- [Caching](caching.md) - HTTP caching, fragment caching, invalidation
-- [Performance](performance.md) - Preloading, N+1 prevention, memoization
+### Cursor
 
-### Real-time & Communication
-- [ActionCable](actioncable.md) - Multi-tenant WebSockets, broadcast scoping, Solid Cable
-- [Notifications](notifications.md) - Time window bundling, user preferences, real-time
-- [Email](email.md) - Multi-tenant mailers, timezone handling
+```bash
+# Per-project
+cp -R 37signals-skills/skills/* your-app/.cursor/skills/
+```
 
-### Features
-- [Webhooks](webhooks.md) - SSRF protection, delinquency tracking, state machines
-- [Workflows](workflows.md) - Event-driven state, undoable commands
-- [Watching](watching.md) - Subscription patterns, toggle UI
-- [Filtering](filtering.md) - Filter objects, URL-based state
-- [AI/LLM Integration](ai-llm.md) - Command pattern, cost tracking, tool patterns
+### Other agents
 
-### Rails Components
-- [Active Storage](active-storage.md) - Attachment patterns, variants
-- [Action Text](action-text.md) - Sanitizer config, remote images
+Each skill is a plain `SKILL.md` with YAML frontmatter ([Agent Skills format](https://agentskills.io)). Most SKILL.md-compatible tools can load them as-is, or paste the contents into your system prompt / rules file.
 
-### Infrastructure & Testing
-- [Security Checklist](security-checklist.md) - XSS, CSRF, SSRF, rate limiting, authorization
-- [Testing](testing.md) - Minitest, fixtures over factories, integration tests
-- [Configuration](configuration.md) - Environment config, Kamal deployment
-- [Observability](observability.md) - Structured logging, Yabeda metrics
+### Staying up to date
 
-### Philosophy
-- [Development Philosophy](development-philosophy.md) - Ship/Validate/Refine, vanilla Rails, DHH's review patterns
-- [What They Avoid](what-they-avoid.md) - Gems and patterns 37signals deliberately doesn't use
+Clone the repo somewhere permanent and symlink instead of copying:
 
-### Contributors
-- [Jason Zimdars](jason-zimdars.md) - Product-oriented development, perceived performance
-- [Jorge Manrubia](jorge-manrubia.md) - Code review style, architecture decisions
+```bash
+ln -s "$(pwd)/37signals-skills/skills/"* ~/.claude/skills/
+```
 
----
+Then `git pull` to get updates.
+
+## The Guide
+
+The skills are distilled from a longer-form reference covering ~35 topics, kept in [`guide/`](guide/). It was extracted from analyzing 265 pull requests in 37signals' Fizzy codebase — not just the final code, but the reviews, trade-offs, and iterations that led to it.
+
+**Core Rails:** [Routing](guide/routing.md) · [Controllers](guide/controllers.md) · [Models](guide/models.md) · [Views](guide/views.md)
+
+**Frontend:** [Hotwire](guide/hotwire.md) · [Stimulus](guide/stimulus.md) · [CSS](guide/css.md) · [Accessibility](guide/accessibility.md) · [Mobile](guide/mobile.md)
+
+**Backend:** [Authentication](guide/authentication.md) · [Multi-Tenancy](guide/multi-tenancy.md) · [Database](guide/database.md) · [Background Jobs](guide/background-jobs.md) · [Caching](guide/caching.md) · [Performance](guide/performance.md)
+
+**Real-time & Communication:** [ActionCable](guide/actioncable.md) · [Notifications](guide/notifications.md) · [Email](guide/email.md)
+
+**Features:** [Webhooks](guide/webhooks.md) · [Workflows](guide/workflows.md) · [Watching](guide/watching.md) · [Filtering](guide/filtering.md) · [AI/LLM Integration](guide/ai-llm.md)
+
+**Rails Components:** [Active Storage](guide/active-storage.md) · [Action Text](guide/action-text.md)
+
+**Infrastructure & Testing:** [Security Checklist](guide/security-checklist.md) · [Testing](guide/testing.md) · [Configuration](guide/configuration.md) · [Observability](guide/observability.md)
+
+**Philosophy & People:** [Development Philosophy](guide/development-philosophy.md) · [What They Avoid](guide/what-they-avoid.md) · [DHH](guide/dhh.md) · [Jason Zimdars](guide/jason-zimdars.md) · [Jorge Manrubia](guide/jorge-manrubia.md)
 
 ## Quick Start: The 37signals Way
 
@@ -84,11 +89,15 @@ These are not Fizzy-specific implementation details. We deliberately skipped bus
 7. **Ship to learn** - prototype quality is valid
 8. **Vanilla Rails is plenty** - maximize what Rails gives you
 
----
+## Important Caveats
+
+**LLM-Generated Content**: This guide and these skills were largely produced by an LLM (Claude) analyzing source code, PR descriptions, and code snippets. There may be hallucinations or inaccuracies. Take everything with a grain of salt and verify against actual implementations.
+
+**Code License**: Code examples extracted from Fizzy are licensed under the [O'Saasy License](https://osaasy.dev). Please review that license before using code snippets in your projects.
 
 ## Acknowledgements
 
-- **[37signals](https://37signals.com)** for open-sourcing their codebase and giving the community a window into how they build software
+- **[37signals](https://37signals.com)** for open-sourcing their codebases and giving the community a window into how they build software
 - **[Rob Zolkos](https://www.zolkos.com/2025/12/10/fizzys-pull-requests)** for his work identifying and cataloging the most educational PRs
 - **[Claude Code](https://claude.com/claude-code)** for creating this guide through iterative deep-dive research sessions
 
@@ -104,8 +113,8 @@ These are not Fizzy-specific implementation details. We deliberately skipped bus
 
 ## Disclaimer
 
-This is an unofficial guide created by analyzing publicly discussed code patterns. It is not affiliated with or endorsed by 37signals.
+This is an unofficial project created by analyzing publicly available code and discussions. It is not affiliated with or endorsed by 37signals.
 
 ## License
 
-Code examples extracted from Fizzy are licensed under the [O'Saasy License](https://osaasy.dev). All analysis, commentary, and original content in this guide is licensed under MIT.
+Code examples extracted from Fizzy are licensed under the [O'Saasy License](https://osaasy.dev). All analysis, commentary, skills, and original content in this repo is licensed under MIT.
