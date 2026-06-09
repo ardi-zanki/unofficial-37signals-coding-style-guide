@@ -2,6 +2,8 @@
 
 Agent skills and a reference guide that teach AI coding assistants to write Rails the 37signals way — extracted from Fizzy, Campfire, and 100+ of DHH's code reviews.
 
+> **Unofficial.** This is a community project based on 37signals' public code and discussions — not affiliated with or endorsed by 37signals.
+
 Drop the skills into Claude Code or Cursor and your agent starts applying the same patterns 37signals uses: rich domain models over service objects, state as records, CRUD-everything routing, fixtures over factories, vanilla Rails over gems.
 
 ## The Skills
